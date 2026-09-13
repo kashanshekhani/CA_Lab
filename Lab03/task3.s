@@ -1,22 +1,17 @@
-.data
-v: .word 10, 20, 30, 40
-.text
-
-main:
-    la x10, v
-    addi x11, x0, 1
+    addi x10, x10, 0x100
+    li x9, 15
+    li x12, 25
+    sw x9, 0(x10)
+    sw x12, 4(x10)
+    li x11, 0
     jal x1, swap
-    j exit
+end:
+    j end
 swap:
-    addi sp, sp, -4
-    slli x5, x11, 2
-    add x5, x10, x5
-    lw x6, 0(x5)
-    sw x6, 0(sp)
-    lw x7, 4(x5)
-    sw x7, 0(x5)
-    lw x6, 0(sp)
-    sw x6, 4(x5)
-    addi sp, sp, 4
+    slli x6, x11, 2
+    add x6, x10, x6
+    lw x5, 0(x6)
+    lw x7, 4(x6)
+    sw x7, 0(x6)
+    sw x5, 4(x6)
     jalr x0, 0(x1)
-exit:

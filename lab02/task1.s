@@ -3,10 +3,8 @@ add x19, x20, x21
 beq x0, x0, Exit_if
 Else:
     sub x19, x20, x21
-
 Exit_if:
     add x0, x0, x0
-
 loop:
     slli x10, x22, 3
     add x10, x10, x25
