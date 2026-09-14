@@ -4,11 +4,11 @@
     sb x5, 0x201(x0)
     li x5, 0
     sb x5, 0x202(x0)
-    jal x1, strcpy
-end:
-    j end
+    jal x1, strcpy # call strcpy
+exit:
+    j exit
 strcpy:
-    addi sp, sp, -16
+    addi sp, sp, -16 # save registers on stack
     sw x10, 12(sp)
     sw x11, 8(sp)
     sw x19, 4(sp)
@@ -20,8 +20,8 @@ loop:
     add x5, x19, x11
     lb x6, 0(x5)
     add x7, x19, x10
-    sb x6, 0(x7)
-    beq x6, x0, done
+    sb x6, 0(x7) # copy byte x[i] = y[i]
+    beq x6, x0, done # exit if null terminator
     addi x19, x19, 1
     beq x0, x0, loop
 done:

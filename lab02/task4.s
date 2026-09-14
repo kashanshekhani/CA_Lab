@@ -1,5 +1,5 @@
-    li x5, 10
-    li x6, 5
+    li x5, 2
+    li x6, 3
     li x10, 0x100
     addi x7, x0, 0
 LoopI:

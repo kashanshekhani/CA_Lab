@@ -1,7 +1,7 @@
-.text
-.globl main
 .data
 save: .word 3, 4, 7, 7, 7, 9, 2, 1
+.text
+.globl main
 main:
     li x22, 5
     li x23, 5
