@@ -1,4 +1,7 @@
 main:
+    li x18, 99
+    li x19, 88
+    li x20, 77
     addi x10, x0, 5
     addi x11, x0, 4
     addi x12, x0, 2
